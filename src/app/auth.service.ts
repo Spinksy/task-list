@@ -4,13 +4,12 @@ import { tokenNotExpired } from 'angular2-jwt';
 
 const AUTH0_CLIENT_ID = 'gEA2gcQMBBRhDid5mRKXMRwBHmbtpshU';
 const AUTH0_DOMAIN = 'spinksy.au.auth0.com';
-
 const ID_TOKEN = 'id_token';
 
 @Injectable()
 export class AuthService {
 
-  lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {});
+  private lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {});
 
   constructor() { 
 

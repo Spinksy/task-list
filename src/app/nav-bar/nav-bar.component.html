@@ -1,3 +1,6 @@
-<p>
-  nav-bar works!
-</p>
+<md-toolbar color="primary">
+  <p>Habits</p>
+  <span class="fill-space"></span>
+  <button md-button (click)="authService.signIn()" *ngIf="!authService.authenticated()">Sign In</button>
+  <button md-button (click)="authService.signOut()" *ngIf="authService.authenticated()">Sign Out</button>
+</md-toolbar>
