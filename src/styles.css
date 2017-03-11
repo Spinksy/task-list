@@ -1,3 +1,4 @@
+@import '~ng2-slim-loading-bar/bundles/style.css';
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 
 body {
