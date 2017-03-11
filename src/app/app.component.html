@@ -1,8 +1,17 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="app-container">
+
   <md-card *ngIf="!authService.authenticated()">
     <md-card-title>Welcome to Habits.</md-card-title>
       <md-card-subtitle>Please <a (click)="authService.signIn()">sign in</a> to begin creating habits</md-card-subtitle>
   </md-card>
+
+  <app-task-list *ngIf="authService.authenticated()"
+    (startAjaxRequest)="slimLoading.start()"
+    (completeAjaxRequest)="slimLoading.complete()">
+  </app-task-list>
+
+  <ng2-slim-loading-bar [color]="'gold'" [height]="'4px'"></ng2-slim-loading-bar>
+
 </div>
